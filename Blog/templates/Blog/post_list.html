@@ -1,6 +1,21 @@
+{% load static %}
 <html>
-<body>
-    <p>Merhaba!</p>
-    <p>Çalışıyor!</p>
+    <head>
+        <title>Benim Blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+<div>
+    <h1><a href="/">Blogum</a></h1>
+</div>
+{% for gonderi in gonderiler %}
+    <div>
+        <p>yayimlanma: {{ gonderi.yayim_tar }}</p>
+        <h1><a href="">{{ gonderi.baslik }}</a></h1>
+        <p>{{ gonderi.yazi|linebreaksbr }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>
